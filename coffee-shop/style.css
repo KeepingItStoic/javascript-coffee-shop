@@ -1,0 +1,61 @@
+/* Reset some browser defaults */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    margin-bottom: 0.4em;
+}
+
+body {
+    background-color: #F4F1DE;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background-color: #3B1C0B;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.logo-container {
+    display: inline-block;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 20px;
+}
+
+/* Sections */
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.welcome,
+.about-us {
+    background-color: #C08552;
+    color: white;
+}
+
+.shop .coffee-list {
+    list-style: none;
+}
+
+/* Footer */
+footer {
+    background-color: #3B1C0B;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* ------------------------------------------------------------------
+   Ch 11: the book swaps in a darker body, Open Sans, a .hamburger rule,
+   and colors for .shop / .contact-us. Add those here when you get there.
+   Ch 12: add .add-to-cart-button { margin-left: 1em; }
+   ------------------------------------------------------------------ */

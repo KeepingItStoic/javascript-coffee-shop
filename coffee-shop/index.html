@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ClydeBank Coffee Shop</title>
+</head>
+<body>
+    <!-- Ch 11: you'll wrap everything below in <div id="main"> and add the Open Sans font link in <head> -->
+    <header>
+        <div class="logo-container">
+            <img src="coffee-cup.svg" alt="Coffee Cup" class="logo">
+        </div>
+        <h1>ClydeBank Coffee Shop</h1>
+    </header>
+
+    <section class="welcome">
+        <h2>Welcome</h2>
+        <p>Welcome to ClydeBank Coffee Shop! We serve the best coffee in town.</p>
+    </section>
+
+    <section class="shop">
+        <h2>Shop</h2>
+        <!-- Ch 1: hard-coded menu.
+             Ch 3: delete these <li>s and give the <ul> an id so JavaScript can fill it.
+             Ch 10: the <ul> gets replaced by a container <div> the list prototype builds into. -->
+        <ul class="coffee-list">
+            <li>Regular Coffee - $3.00</li>
+            <li>Espresso - $3.50</li>
+            <li>Cappuccino - $4.00</li>
+            <li>Latte - $4.25</li>
+        </ul>
+    </section>
+
+    <section class="about-us">
+        <h2>About Us</h2>
+        <p>Our mission is to provide the highest quality coffee to our community.</p>
+    </section>
+
+    <section class="contact-us">
+        <h2>Contact Us</h2>
+        <p>Email us at <a href="mailto:support@clydebankmedia.com">support@clydebankmedia.com</a> or call us at (800) 340-3069.</p>
+    </section>
+
+    <footer>
+        <p>Copyright &copy; 2024 ClydeBank Coffee Shop</p>
+    </footer>
+
+    <!-- Script loads LAST so every element above already exists in the DOM -->
+    <script src="shop.js"></script>
+</body>
+</html>
