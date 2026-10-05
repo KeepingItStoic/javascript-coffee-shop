@@ -25,6 +25,7 @@ Instead of opening a new copy of the site each chapter, you keep editing the **s
 The official finished code is in your clone at
 `D:\ProgrammingAndDevelopment\JavaScript\JavaScript-QuickStartGuide\JavaScript-CoffeeShopWebsite`.
 Try each step yourself first, then compare — don't copy.
+IF you have forked your own copy of this repo your file path to the provided project files will be different from the file path listed abouve.
 
 ## Running it
 
