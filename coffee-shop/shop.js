@@ -10,7 +10,18 @@ console.log("ClydeBank Coffee Shop is now open!")
 // ===== Ch 3: Dynamic inventory ========================================
 // TODO: two parallel arrays (item names + prices), grab the menu <ul> by id,
 //       and loop to add an <li> per item. Remember .toFixed(2) for prices.
+// Our Inventory
+let inventory = ["Regular Coffee", "Espresso", "Cappuccino", "Latte"];
+let inventoryPrices = [3.00, 3.50, 4.00, 4.25];
 
+// Reference the menu list by ID
+let menuList = document.getElementById("coffee-menu");
+
+// Loop through the inventory array and display each item in the array
+for (let i = 0; i < inventory.length; i++) {
+    menuList.innerHTML += "<li>" + inventory[i] + " - $" +
+    inventoryPrices[i].toFixed(2) + "</li>"
+};
 
 // ===== Ch 4: Menu function ============================================
 // TODO: wrap the Ch 3 loop in a function (e.g. populateMenu(container))

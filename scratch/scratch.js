@@ -3,3 +3,11 @@
 // Clear it out whenever you start a new example.
 
 document.getElementById("content").textContent = "Hello, World!"
+
+firstNameTextBox = document.getElementById("firstName")
+submitButton = document.getElementById("submit")
+greetingContainer = document.getElementById("greeting")
+submitButton.addEventListener("click", function() {
+greetingContainer.textContent = "Hello, " + firstNameTextBox.value +
+"!"
+}
