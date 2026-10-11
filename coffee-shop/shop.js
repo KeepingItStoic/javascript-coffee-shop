@@ -2,12 +2,13 @@
 // This ONE file grows chapter by chapter. Leave the roadmap comments in place
 // and fill in each section as you reach it in the book.
 
-// ===== Ch 1: Getting started ==========================================
+// ===== Ch 1: Getting started ===============================================================================
 // Confirm the file is wired up — open DevTools (F12) > Console to see it.
+/*
 console.log("ClydeBank Coffee Shop is now open!");
+*/
 
-
-// ===== Ch 3: Dynamic inventory ========================================
+// ===== Ch 3: Dynamic inventory =============================================================================
 // TODO: two parallel arrays (item names + prices), grab the menu <ul> by id,
 //       and loop to add an <li> per item. Remember .toFixed(2) for prices.
 // Our Inventory
@@ -20,8 +21,9 @@ with parallel arrays with notes on their limitations.
 
 
 // Reference the menu list by ID
+/*
 let menuList = document.getElementById("coffee-menu");
-
+*/
 // Loop through the inventory array and display each item in the array
 /*
 This loop has been commented out and replaced by the populateMenu function.
@@ -32,7 +34,7 @@ for (let i = 0; i < inventory.length; i++) {
 
 */
 
-// ===== Ch 4: Menu function ============================================
+// ===== Ch 4: Menu function =============================================================================
 // TODO: wrap the Ch 3 loop in a function (e.g. populateMenu(container))
 // and call it once.
 /*
@@ -49,10 +51,11 @@ Parallel arrays presented a maintainability challenge, as adding or removing ite
 inventoryObject consolidates the data and the display logic into a single, cohesive structure. This would also keep new items
 added later in sync with key value pairs instead of managing parallel arrays with 2 independent indices. */
 
-// ===== Ch 6: Menu object ==============================================
+// ===== Ch 6: Menu object =============================================================================
 // TODO: replace the arrays + function with ONE object that holds the
 //       inventory (name: price pairs) AND a populate(container) method.
 // The inventory object (named "menu" to match the book)
+/*
 let menu = {
     inventory: {
         "Regular Coffee": 3.00,
@@ -69,36 +72,70 @@ let menu = {
 };
 
 menu.populate(menuList);
+*/
 
 
-// ===== Ch 7: JSON =====================================================
+// ===== Ch 7: JSON =====================================================================================
 // TODO (console practice): swap in a new inventory from a JSON-style object,
 //       clear the list's innerHTML, and call populate again.
+// Display a quick message in the console.
+console.log("ClydeBank Coffee Shop is now open!")
 
+// The inventory object
+let menu = {
+    inventory: {
+        "Regular Coffee": 3.00,
+        "Espresso": 3.50,
+        "Cappuccino": 4.00,
+        "Latte": 4.25
+    },
+    populate: function(container) {
+        for (let item in this.inventory) {
+            let price = this.inventory[item].toFixed(2)
+            
+            // Create a new li element
+            let li = document.createElement("li")
+            
+            // Add text content to the li element
+            li.textContent = `${item} - $${price}`
+            
+            // Append the li element to the container
+            container.appendChild(li)
+        }
+    }
+}
 
-// ===== Ch 8: DOM menu =================================================
+// Obtain reference to the menu list by ID
+let menuList = document.getElementById("coffee-menu")
+
+// Populate the menu
+menu.populate(menuList)
+/* This is a faar better solution than using innerHTML += because it avoids re-parsing the entire HTML of the container and is more
+efficient. It also makes it easier to change the design in the future if the structure of the list items needs to be modified. */
+
+// ===== Ch 8: DOM menu ========================================================================================
 // TODO: rewrite populate to use document.createElement("li"),
 //       textContent, and appendChild instead of innerHTML +=.
 
 
-// ===== Ch 10: List prototype ==========================================
+// ===== Ch 10: List prototype =================================================================================
 // TODO: a reusable listPrototype with render(values, parent, id, separator, className);
 //       create the menu with Object.create(listPrototype). (index.html changes too!)
 
 
-// ===== Ch 11: JavaScript-driven site ==================================
+// ===== Ch 11: JavaScript-driven site =========================================================================
 // TODO: hamburgerMenu (SVG built with createElementNS), mainMenu (hidden div),
 //       menuLinks object, and everything run inside a DOMContentLoaded listener.
 //       Optional: currentPage + "#" links to show/hide sections as pages.
 
 
-// ===== Ch 12: Cart (frontend) =========================================
+// ===== Ch 12: Cart (frontend) =================================================================================
 // TODO: locale/currency + Intl.NumberFormat, cookie helpers (getCookie,
 //       saveCart, getCart), addToCart/removeFromCart, buttonPrototype,
 //       "Add to Cart" buttons for every menu item.
 //       NOTE: cookies need a real server — see README (http-server).
 
 
-// ===== Ch 16: Cart (backend) ==========================================
+// ===== Ch 16: Cart (backend) ==================================================================================
 // TODO: change addToCart/getCart to use fetch() against your Node server
 //       (see ../backend/server.js) instead of cookies.
